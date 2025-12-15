@@ -1,29 +1,33 @@
 import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { GameProvider } from "./components/GameContext";
+import Layout from "./components/Layout";
 import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
-
-function Router() {
-  return (
-    <Switch>
-      {/* Add pages below */}
-      {/* <Route path="/" component={Home}/> */}
-      {/* Fallback to 404 */}
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Game from "./pages/Game";
+import MockBoard from "./pages/MockBoard";
+import Admin from "./pages/Admin";
+import Stats from "./pages/Stats";
+import Leaderboard from "./pages/Leaderboard";
+import NotFound from "./pages/not-found";
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <GameProvider>
+      <Layout>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/game" component={Game} />
+          <Route path="/mock-board" component={MockBoard} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/stats" component={Stats} />
+          <Route path="/leaderboard" component={Leaderboard} />
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+      <Toaster />
+    </GameProvider>
   );
 }
 
