@@ -1,10 +1,13 @@
 import { useGame } from "@/components/GameContext";
+import { useLocation } from "wouter";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Trophy, TrendingUp } from "lucide-react";
+import { Trophy, TrendingUp, ArrowLeft } from "lucide-react";
 
 export default function Stats() {
   const { user } = useGame();
+  const [, setLocation] = useLocation();
 
   if (!user) return <div>Access Denied</div>;
 
@@ -22,7 +25,12 @@ export default function Stats() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
-      <h1 className="text-3xl font-serif font-bold">Your Statistics</h1>
+      <div className="flex items-center gap-4">
+        <Button variant="ghost" size="icon" onClick={() => setLocation("/dashboard")}>
+          <ArrowLeft className="h-6 w-6" />
+        </Button>
+        <h1 className="text-3xl font-serif font-bold">Your Statistics</h1>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card>

@@ -4,8 +4,19 @@ import { useLocation } from "wouter";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Heart, HelpCircle, AlertCircle } from "lucide-react";
+import { Heart, HelpCircle, AlertCircle, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export default function Game() {
   const { 
@@ -16,7 +27,8 @@ export default function Game() {
     submitAnswer, 
     gameActive,
     useLifeline,
-    lifelineUsed
+    lifelineUsed,
+    endGame
   } = useGame();
   
   const [, setLocation] = useLocation();
@@ -28,6 +40,11 @@ export default function Game() {
       setLocation("/dashboard");
     }
   }, [gameActive, setLocation]);
+
+  const handleExit = () => {
+    endGame();
+    setLocation("/dashboard");
+  };
 
   const currentQuestion = currentQuestions[currentQuestionIndex];
 
@@ -66,18 +83,40 @@ export default function Game() {
   return (
     <div className="max-w-3xl mx-auto py-8 space-y-8">
       {/* Header Stats */}
-      <div className="flex justify-between items-center bg-card p-4 rounded-xl shadow-sm border border-border">
-        <div className="flex items-center gap-2 text-red-500">
-          <Heart className="fill-current h-6 w-6" />
-          <span className="font-bold text-xl">{lives}</span>
-        </div>
-        <div className="text-center">
-          <span className="text-xs uppercase tracking-widest text-muted-foreground">Question</span>
-          <p className="font-bold text-xl">{currentQuestionIndex + 1} <span className="text-muted-foreground text-base">/ {currentQuestions.length}</span></p>
-        </div>
-        <div className="text-right">
-          <span className="text-xs uppercase tracking-widest text-muted-foreground">Score</span>
-          <p className="font-bold text-xl text-primary">{score}</p>
+      <div className="flex gap-4 items-center">
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button variant="ghost" size="icon" className="shrink-0">
+              <ArrowLeft className="h-6 w-6" />
+            </Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Quit Game?</AlertDialogTitle>
+              <AlertDialogDescription>
+                Are you sure you want to return to the menu? Your current progress will be lost.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction onClick={handleExit}>Quit Game</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+
+        <div className="flex-1 flex justify-between items-center bg-card p-4 rounded-xl shadow-sm border border-border">
+          <div className="flex items-center gap-2 text-red-500">
+            <Heart className="fill-current h-6 w-6" />
+            <span className="font-bold text-xl">{lives}</span>
+          </div>
+          <div className="text-center">
+            <span className="text-xs uppercase tracking-widest text-muted-foreground">Question</span>
+            <p className="font-bold text-xl">{currentQuestionIndex + 1} <span className="text-muted-foreground text-base">/ {currentQuestions.length}</span></p>
+          </div>
+          <div className="text-right">
+            <span className="text-xs uppercase tracking-widest text-muted-foreground">Score</span>
+            <p className="font-bold text-xl text-primary">{score}</p>
+          </div>
         </div>
       </div>
 
