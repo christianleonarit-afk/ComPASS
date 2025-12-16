@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <BookOpen className="h-6 w-6 text-primary" />
-            <span className="font-serif font-bold text-xl tracking-tight text-primary">Librarium</span>
+            <span className="font-serif font-bold text-xl tracking-tight text-primary">ComPASS</span>
           </div>
 
           {user && (
@@ -67,7 +67,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      
       <main className="flex-1 container mx-auto px-4 py-8">
         {children}
       </main>
