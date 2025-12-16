@@ -20,7 +20,7 @@ export default function Dashboard() {
   
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [mockPasscodeOpen, setMockPasscodeOpen] = useState(false);
-  const [mockCreds, setMockCreds] = useState({ user: "", pass: "" });
+  const [mockCreds, setMockCreds] = useState({ pass: "" });
 
   const handleStartStandard = (subject: string, set: number) => {
     startGame("standard", subject, set);
@@ -40,14 +40,14 @@ export default function Dashboard() {
   };
 
   const confirmMockStart = () => {
-    if (mockCreds.user === "123" && mockCreds.pass === "123") {
+    if (mockCreds.pass === "123") {
        startGame("mock");
        setLocation("/mock-board");
     } else {
        toast({
         variant: "destructive",
         title: "Access Denied",
-        description: "Invalid credentials. (Hint: user: 123, pass: 123)",
+        description: "Invalid credentials. (Hint: pass: 123)",
       });
     }
   };
@@ -183,14 +183,6 @@ export default function Dashboard() {
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">
-            <div className="space-y-2">
-              <Label>Username</Label>
-              <Input 
-                value={mockCreds.user} 
-                onChange={(e) => setMockCreds(prev => ({ ...prev, user: e.target.value }))}
-                placeholder="Ex: 123"
-              />
-            </div>
             <div className="space-y-2">
               <Label>Passcode</Label>
               <Input 

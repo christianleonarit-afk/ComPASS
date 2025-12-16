@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const { user, logout } = useGame();
 
   if (location === "/") return <>{children}</>;
@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <p className="font-medium">{user.name}</p>
                   <p className="text-xs text-muted-foreground capitalize">{user.role}</p>
                 </div>
-                <Button variant="ghost" size="icon" onClick={logout} title="Logout">
+                <Button variant="ghost" size="icon" onClick={() => { logout(); setLocation("/"); }} title="Logout">
                   <LogOut className="h-5 w-5" />
                 </Button>
               </div>
