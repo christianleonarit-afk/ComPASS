@@ -27,9 +27,7 @@ export default function Home() {
     }
 
     if (selectedRole === "admin") {
-      if (passcode === "123" && username === "user") { // Simplified check based on prompt "user: 123 pass: 123" - Wait, prompt says "user: 123 pass: 123" for passcode? Or implies auth? 
-        // "enter a passcode first make it "user: 123 pass: 123" on the mean time" - This is ambiguous. I'll treat it as username 'user' and pass '123' for simplicity.
-        // Actually, prompt says "enter a passcode first make it "user: 123 pass: 123" on the mean time" - Likely meant credential pair.
+      if (passcode === "123" && username === "leo") { 
         login(selectedRole, username);
         setLocation("/dashboard");
       } else {
@@ -55,7 +53,7 @@ export default function Home() {
           className="text-center mb-12 space-y-4"
         >
           <h1 className="text-5xl md:text-7xl font-display font-bold text-primary tracking-tight">
-            Librarium
+            LIS ComPASS
           </h1>
           <p className="text-xl text-muted-foreground font-serif italic max-w-2xl mx-auto">
             "The only thing that you absolutely have to know, is the location of the library." - Albert Einstein
@@ -63,10 +61,9 @@ export default function Home() {
         </motion.div>
 
         {!selectedRole ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
             {[
               { role: "student", icon: User, label: "Student/User", desc: "Review for your licensure exam." },
-              { role: "librarian", icon: BookOpen, label: "Librarian", desc: "Access resources and references." },
               { role: "admin", icon: Shield, label: "Administrator", desc: "Manage questions and database." },
             ].map((item, idx) => (
               <motion.div
@@ -130,7 +127,7 @@ export default function Home() {
                     Back
                   </Button>
                   <Button className="flex-1" onClick={handleLogin}>
-                    Enter Librarium
+                    Enter LIS ComPASS
                   </Button>
                 </div>
               </CardContent>
