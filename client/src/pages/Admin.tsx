@@ -32,33 +32,31 @@ export default function Admin() {
     name: "",
     password: ""
   });
-  const [managingRoom, setManagingRoom] = useState<any>(null);
-  const [showManageDialog, setShowManageDialog] = useState(false);
 
-  const handleManageRoom = (room: any) => {
-    console.log('Opening manage dialog for room:', room);
-    setManagingRoom(room);
-    setShowManageDialog(true);
-    console.log('Dialog should now be open, managingRoom:', room);
-  };
 
-  const handleDeleteRoom = async () => {
-    console.log('handleDeleteRoom called!');
-    if (!managingRoom) {
-      console.log('No managingRoom found!');
+  const handleDeleteRoom = async (room: any) => {
+    console.log('Delete room called for:', room);
+
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete the room "${room.name}"?\n\nThis will also delete ${room.questionIds?.length || 0} questions associated with this room.`
+    );
+
+    if (!confirmDelete) {
+      console.log('User cancelled room deletion');
       return;
     }
 
-    console.log('Managing room:', managingRoom);
+    console.log('User confirmed deletion, proceeding...');
+
     try {
-      console.log('Starting room deletion for:', managingRoom.name, 'ID:', managingRoom.id);
+      console.log('Starting room deletion for:', room.name, 'ID:', room.id);
 
       // First delete the questions associated with this room
       let deletedQuestions = 0;
-      if (managingRoom.questionIds && managingRoom.questionIds.length > 0) {
-        console.log('Deleting questions for room:', managingRoom.questionIds.length, 'questions');
+      if (room.questionIds && room.questionIds.length > 0) {
+        console.log('Deleting questions for room:', room.questionIds.length, 'questions');
 
-        for (const questionId of managingRoom.questionIds) {
+        for (const questionId of room.questionIds) {
           try {
             console.log('Attempting to delete question:', questionId);
             const deleteResponse = await fetch(`/api/mockboard-questions/${questionId}`, {
@@ -80,18 +78,16 @@ export default function Admin() {
 
       // Then delete the room
       console.log('Now deleting the room itself');
-      const response = await fetch(`/api/rooms/${managingRoom.id}`, {
+      const response = await fetch(`/api/rooms/${room.id}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
         console.log('Room deleted successfully');
-        setRooms(prev => prev.filter(r => r.id !== managingRoom.id));
-        setShowManageDialog(false);
-        setManagingRoom(null);
+        setRooms(prev => prev.filter(r => r.id !== room.id));
         toast({
           title: "Room Deleted Successfully",
-          description: `Room "${managingRoom.name}" deleted. ${deletedQuestions} questions removed.`,
+          description: `Room "${room.name}" deleted. ${deletedQuestions} questions removed.`,
         });
       } else {
         const errorText = await response.text();
@@ -473,11 +469,11 @@ export default function Admin() {
                     </span>
                   </div>
                   <Button
-                    variant="outline"
+                    variant="destructive"
                     size="sm"
-                    onClick={() => handleManageRoom(room)}
+                    onClick={() => handleDeleteRoom(room)}
                   >
-                    Manage
+                    Delete Room
                   </Button>
                 </div>
               ))}
@@ -580,45 +576,7 @@ export default function Admin() {
         </Card>
       </div>
 
-      {/* Room Management Dialog */}
-      <Dialog open={showManageDialog} onOpenChange={setShowManageDialog}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Manage Room: {managingRoom?.name}</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4">
-            <div className="p-4 bg-muted rounded-lg">
-              <h4 className="font-medium mb-2">Room Details</h4>
-              <div className="space-y-1 text-sm">
-                <p><strong>Name:</strong> {managingRoom?.name}</p>
-                <p><strong>Questions:</strong> {managingRoom?.questionIds?.length || 0}</p>
-                <p><strong>ID:</strong> {managingRoom?.id}</p>
-              </div>
-            </div>
 
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                onClick={() => setShowManageDialog(false)}
-                className="flex-1"
-              >
-                Close
-              </Button>
-              <Button
-                variant="destructive"
-                onClick={() => {
-                  console.log('Delete Room button clicked');
-                  handleDeleteRoom();
-                }}
-                className="flex-1"
-                disabled={!managingRoom}
-              >
-                Delete Room
-              </Button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
