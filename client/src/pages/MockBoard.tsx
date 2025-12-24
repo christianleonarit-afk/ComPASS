@@ -64,35 +64,9 @@ const MockBoard = memo(function MockBoard() {
     console.log('Submitting exam with answers:', answers);
     console.log('Total questions:', currentQuestions.length);
 
-    // Calculate score and populate questionResults for the context
-    let correctCount = 0;
-    const newQuestionResults: boolean[] = [];
-
-    currentQuestions.forEach((q, idx) => {
-      const userAnswer = answers[idx];
-      const isCorrect = userAnswer === q.correctAnswer;
-      newQuestionResults[idx] = isCorrect;
-
-      if (isCorrect) {
-        correctCount++;
-      }
-
-      console.log(`Question ${idx + 1}: User=${userAnswer}, Correct=${q.correctAnswer}, Result=${isCorrect}`);
-    });
-
-    console.log(`Final score: ${correctCount}/${currentQuestions.length} (${(correctCount/currentQuestions.length*100).toFixed(1)}%)`);
-
-    // Update local results for immediate display
-    const percentage = (correctCount / currentQuestions.length) * 100;
-    const passed = percentage >= 75;
-
-    setLocalResults({ score: percentage, passed, correctCount, total: currentQuestions.length });
-
-    // Update the context's questionResults for proper endGame calculation
-    // We need to access the context's state setter
-    // For now, we'll rely on the local calculation since the context endGame uses questionResults
-    // which we're not setting properly. Let's call endGame directly with the results we want.
-  }, [currentQuestions, answers]);
+    // Use the context's submitMockExam method which properly calculates everything
+    submitMockExam(answers);
+  }, [currentQuestions, answers, submitMockExam]);
 
   if (results && 'subjectScores' in results) {
     const contextResults = results as any;
