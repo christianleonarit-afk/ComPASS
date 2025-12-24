@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { randomUUID } from "crypto";
 import { db } from "./db";
-import { questions } from "@shared/schema";
+import { questions, mockboardQuestions } from "@shared/schema";
 import { eq, inArray } from "drizzle-orm";
 
 export type Question = {
@@ -109,8 +109,6 @@ export class QuestionStorage {
 
   async getBulkMockboard(ids: string[]): Promise<Question[]> {
     if (db) {
-      // Import mockboard_questions schema dynamically
-      const { mockboardQuestions } = await import("../shared/schema");
       const rows = await db.select().from(mockboardQuestions).where(inArray(mockboardQuestions.id, ids));
       return rows.map((r: any) => ({
         id: r.id,
