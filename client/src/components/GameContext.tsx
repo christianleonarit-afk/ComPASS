@@ -121,15 +121,31 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         const response = await fetch('/api/mockboard-questions');
         if (!response.ok) throw new Error('Failed to fetch mockboard questions');
         const questions = await response.json();
-        // Convert from database format to Question format
-        return questions.map((q: any) => ({
-          id: q.id,
-          text: q.text,
-          options: q.options,
-          correctAnswer: q.correct_answer,
-          subject: q.subject,
-          set: q.set,
-        }));
+        // Convert from database format to Question format and sort by imported_at to maintain file order
+        return questions
+          .map((q: any) => ({
+            id: q.id,
+            text: q.text,
+            options: q.options,
+            correctAnswer: q.correct_answer,
+            subject: q.subject,
+            set: q.set,
+            imported_at: q.imported_at, // Keep for sorting
+          }))
+          .sort((a: any, b: any) => {
+            // Sort by imported_at timestamp to maintain original file order
+            const aTime = new Date(a.imported_at || 0).getTime();
+            const bTime = new Date(b.imported_at || 0).getTime();
+            return aTime - bTime; // Ascending order (earliest first)
+          })
+          .map((q: any) => ({
+            id: q.id,
+            text: q.text,
+            options: q.options,
+            correctAnswer: q.correctAnswer,
+            subject: q.subject,
+            set: q.set,
+          })); // Remove imported_at from final objects
       } catch (error) {
         console.warn('Mockboard questions API not available:', error);
         return [];
