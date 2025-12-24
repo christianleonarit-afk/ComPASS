@@ -36,8 +36,10 @@ export default function Admin() {
   const [showManageDialog, setShowManageDialog] = useState(false);
 
   const handleManageRoom = (room: any) => {
+    console.log('Opening manage dialog for room:', room);
     setManagingRoom(room);
     setShowManageDialog(true);
+    console.log('Dialog should now be open, managingRoom:', room);
   };
 
   const handleDeleteRoom = async () => {
