@@ -41,8 +41,13 @@ export default function Admin() {
   };
 
   const handleDeleteRoom = async () => {
-    if (!managingRoom) return;
+    console.log('handleDeleteRoom called!');
+    if (!managingRoom) {
+      console.log('No managingRoom found!');
+      return;
+    }
 
+    console.log('Managing room:', managingRoom);
     try {
       console.log('Starting room deletion for:', managingRoom.name, 'ID:', managingRoom.id);
 
