@@ -78,7 +78,8 @@ interface GameContextType {
   consecutiveCorrect: number;
   addQuestion: (q: Question) => void;
   importQuestions: (questions: Question[]) => void;
-  mockResults: { score: number; passed: boolean; details: Record<string, number> } | null;
+  mockResults: { score: number; passed: boolean; details: Record<string, number>; subjectScores?: Record<string, {correct: number, total: number, percentage: number}> } | null;
+  submitMockExam: (answers: Record<number, number>) => void;
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -444,6 +445,33 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const submitMockExam = (answers: Record<number, number>) => {
+    console.log('submitMockExam called with answers:', answers);
+
+    // Calculate score and populate questionResults
+    let correctCount = 0;
+    const newQuestionResults: boolean[] = [];
+
+    currentQuestions.forEach((q, idx) => {
+      const userAnswer = answers[idx];
+      const isCorrect = userAnswer === q.correctAnswer;
+      newQuestionResults[idx] = isCorrect;
+
+      if (isCorrect) {
+        correctCount++;
+      }
+    });
+
+    console.log(`Calculated score: ${correctCount}/${currentQuestions.length}`);
+
+    // Set the question results and score in context state
+    setQuestionResults(newQuestionResults);
+    setScore(correctCount);
+
+    // Now call endGame to calculate the detailed results
+    endGame();
+  };
+
   return (
     <GameContext.Provider
       value={{
@@ -467,7 +495,8 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         consecutiveCorrect,
         addQuestion,
         importQuestions,
-        mockResults
+        mockResults,
+        submitMockExam
       }}
     >
       {children}
