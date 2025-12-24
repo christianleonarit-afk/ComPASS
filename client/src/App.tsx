@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Game from "./pages/Game";
 import MockBoard from "./pages/MockBoard";
+import RoomEntry from "./pages/RoomEntry";
 import Admin from "./pages/Admin";
 import Stats from "./pages/Stats";
 import Leaderboard from "./pages/Leaderboard";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/game" component={Game} />
           <Route path="/mock-board" component={MockBoard} />
+          <Route path="/room-entry" component={RoomEntry} />
           <Route path="/admin" component={Admin} />
           <Route path="/stats" component={Stats} />
           <Route path="/leaderboard" component={Leaderboard} />

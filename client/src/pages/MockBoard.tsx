@@ -1,26 +1,49 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback, memo } from "react";
 import { useGame } from "@/components/GameContext";
 import { useLocation } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Timer, AlertTriangle } from "lucide-react";
+import { Timer, AlertTriangle, CheckCircle, Circle } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 
-export default function MockBoard() {
-  const { 
-    currentQuestions, 
+const MockBoard = memo(function MockBoard() {
+  const {
+    currentQuestions,
     lives, // Not used in mock but good to verify
     timeLeft,
     gameActive,
     endGame,
     mockResults
   } = useGame();
-  
+
   const [, setLocation] = useLocation();
   const [answers, setAnswers] = useState<Record<number, number>>({}); // qIndex -> optionIndex
+  const [localResults, setLocalResults] = useState<{ score: number, passed: boolean, correctCount: number, total: number } | null>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  // Use context results if available, otherwise fall back to local calculation
+  const results = mockResults || localResults;
+
+  // Pagination settings - optimized for performance
+  const QUESTIONS_PER_PAGE = 20;
+  const totalPages = Math.ceil(currentQuestions.length / QUESTIONS_PER_PAGE);
+  const startIndex = currentPage * QUESTIONS_PER_PAGE;
+  const endIndex = Math.min(startIndex + QUESTIONS_PER_PAGE, currentQuestions.length);
+
+  // Memoize current page questions to prevent unnecessary re-renders
+  const currentPageQuestions = useMemo(() =>
+    currentQuestions.slice(startIndex, endIndex),
+    [currentQuestions, startIndex, endIndex]
+  );
+
+  // Track answered questions for progress
+  const answeredCount = useMemo(() =>
+    Object.keys(answers).length,
+    [answers]
+  );
 
   // Format time
   const minutes = Math.floor(timeLeft / 60);
@@ -32,11 +55,11 @@ export default function MockBoard() {
     }
   }, [gameActive, mockResults, setLocation]);
 
-  const handleSelect = (qIndex: number, optionIndex: number) => {
+  const handleSelect = useCallback((qIndex: number, optionIndex: number) => {
     setAnswers(prev => ({ ...prev, [qIndex]: optionIndex }));
-  };
+  }, []);
 
-  const handleSubmitExam = () => {
+  const handleSubmitExam = useCallback(() => {
     // We need to feed the answers back to the context. 
     // The current context `submitAnswer` handles one by one. 
     // For Mock Board, usually you submit all at once or one by one. 
@@ -92,9 +115,58 @@ export default function MockBoard() {
     setLocalResults({ score: percentage, passed, correctCount, total: currentQuestions.length });
     // And technically we should update the global user stats. I'll skip that for the exact "strict" prototype unless I add a specific `updateStats` method.
     // I'll assume for mockup visual purposes, local state is enough.
-  };
-  
-  const [localResults, setLocalResults] = useState<{ score: number, passed: boolean, correctCount: number, total: number } | null>(null);
+  }, [currentQuestions]);
+
+  if (results && 'subjectScores' in results) {
+    const contextResults = results as any;
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-muted/20">
+        <Card className="w-full max-w-2xl shadow-2xl">
+          <CardHeader className="text-center">
+            <div className="mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-4 bg-muted">
+               {contextResults.passed ? <span className="text-6xl">🎉</span> : <span className="text-6xl">⚠️</span>}
+            </div>
+            <CardTitle className="text-3xl font-display">{contextResults.passed ? "PASSED" : "FAILED"}</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="p-4 bg-primary/5 rounded-lg">
+                <p className="text-sm text-muted-foreground uppercase">Final Score</p>
+                <p className="text-4xl font-bold text-primary">{contextResults.score.toFixed(1)}%</p>
+              </div>
+              <div className="p-4 bg-muted rounded-lg">
+                <p className="text-sm text-muted-foreground uppercase">Overall</p>
+                <p className="text-2xl font-bold">{contextResults.passed ? "PASSED" : "FAILED"}</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-center">Subject-wise Performance</h3>
+              {Object.entries(contextResults.subjectScores).map(([subject, scores]: [string, any]) => (
+                <div key={subject} className="flex justify-between items-center p-3 border rounded-lg">
+                  <span className="font-medium">{subject}</span>
+                  <div className="text-right">
+                    <span className="font-bold">{scores.percentage.toFixed(1)}%</span>
+                    <span className="text-sm text-muted-foreground ml-2">
+                      ({scores.correct}/{scores.total})
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-muted-foreground text-center">
+              {contextResults.passed
+                ? "Congratulations! You have demonstrated proficiency in the required competencies."
+                : "You did not meet the passing threshold of 75%. Keep reviewing!"}
+            </p>
+
+            <Button className="w-full" onClick={() => setLocation("/dashboard")}>Return to Dashboard</Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   if (localResults) {
     return (
@@ -117,10 +189,10 @@ export default function MockBoard() {
                 <p className="text-4xl font-bold">{localResults.correctCount}/{localResults.total}</p>
               </div>
             </div>
-            
+
             <p className="text-muted-foreground">
-              {localResults.passed 
-                ? "Congratulations! You have demonstrated proficiency in the required competencies." 
+              {localResults.passed
+                ? "Congratulations! You have demonstrated proficiency in the required competencies."
                 : "You did not meet the passing threshold of 75%. Keep reviewing!"}
             </p>
 
@@ -135,70 +207,98 @@ export default function MockBoard() {
     <div className="h-[calc(100vh-100px)] flex flex-col">
       {/* Sticky Header */}
       <div className="flex items-center justify-between p-4 bg-card border-b border-border shadow-sm sticky top-0 z-10">
-        <div className="flex items-center gap-2">
-          <Timer className="text-destructive animate-pulse" />
-          <span className="font-mono text-xl font-bold">{minutes}:{seconds.toString().padStart(2, '0')}</span>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Timer className="text-destructive animate-pulse" />
+            <span className="font-mono text-xl font-bold">{minutes}:{seconds.toString().padStart(2, '0')}</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm">
+            <CheckCircle className="w-4 h-4 text-green-600" />
+            <span className="font-medium">{answeredCount}/{currentQuestions.length} answered</span>
+          </div>
         </div>
-        <div className="text-sm text-muted-foreground">
-           Mock Board Examination
+        <div className="text-center">
+          <div className="text-sm text-muted-foreground">Mock Board Examination</div>
+          <div className="w-32 h-2 bg-muted rounded-full mt-1">
+            <div
+              className="h-full bg-primary rounded-full transition-all duration-300"
+              style={{ width: `${(answeredCount / currentQuestions.length) * 100}%` }}
+            />
+          </div>
         </div>
-        <Button size="sm" onClick={handleSubmitExam}>Submit Exam</Button>
+        <Button size="sm" onClick={handleSubmitExam} disabled={answeredCount === 0}>
+          Submit Exam
+        </Button>
       </div>
 
-      <div className="flex-1 overflow-hidden flex">
-        {/* Question List */}
-        <ScrollArea className="flex-1 p-6">
-          <div className="max-w-4xl mx-auto space-y-8">
-            {currentQuestions.map((q, idx) => (
-              <Card key={q.id} id={`question-${idx}`} className="border-l-4 border-l-primary/50">
-                <CardHeader className="pb-2">
-                   <div className="flex justify-between">
-                     <span className="text-xs font-bold text-muted-foreground">Question {idx + 1}</span>
-                     <span className="text-xs text-muted-foreground">{q.subject}</span>
-                   </div>
-                   <h3 className="text-lg font-medium mt-2">{q.text}</h3>
-                </CardHeader>
-                <CardContent>
-                  <RadioGroup 
-                    onValueChange={(val) => handleSelect(idx, parseInt(val))} 
-                    value={answers[idx]?.toString()}
-                  >
-                    {q.options.map((opt, optIdx) => (
-                      <div key={optIdx} className="flex items-center space-x-2 py-2">
-                        <RadioGroupItem value={optIdx.toString()} id={`q${idx}-opt${optIdx}`} />
-                        <Label htmlFor={`q${idx}-opt${optIdx}`} className="font-normal cursor-pointer w-full">
-                          {opt}
-                        </Label>
-                      </div>
-                    ))}
-                  </RadioGroup>
-                </CardContent>
-              </Card>
-            ))}
+      {/* Progress and Pagination */}
+      <div className="px-6 py-3 bg-muted/50 border-b">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <div className="text-sm text-muted-foreground">
+            Question {startIndex + 1}-{endIndex} of {currentQuestions.length}
           </div>
-        </ScrollArea>
-        
-        {/* Sidebar Nav */}
-        <div className="w-64 border-l border-border bg-muted/10 p-4 hidden xl:block overflow-y-auto">
-          <h4 className="font-bold mb-4 text-sm uppercase">Navigation</h4>
-          <div className="grid grid-cols-5 gap-2">
-             {currentQuestions.map((_, idx) => (
-               <a 
-                 key={idx}
-                 href={`#question-${idx}`}
-                 className={cn(
-                   "h-8 w-8 flex items-center justify-center rounded text-xs font-medium transition-colors border",
-                   answers[idx] !== undefined 
-                     ? "bg-primary text-primary-foreground border-primary" 
-                     : "bg-background hover:bg-muted"
-                 )}
-               >
-                 {idx + 1}
-               </a>
-             ))}
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
+              disabled={currentPage === 0}
+            >
+              Previous
+            </Button>
+            <span className="text-sm font-medium">
+              Page {currentPage + 1} of {totalPages}
+            </span>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage(prev => Math.min(totalPages - 1, prev + 1))}
+              disabled={currentPage === totalPages - 1}
+            >
+              Next
+            </Button>
           </div>
         </div>
+      </div>
+
+      <div className="flex-1 overflow-hidden">
+        {/* Question List - Paginated */}
+        <ScrollArea className="h-full p-6">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {currentPageQuestions.map((q, pageIdx) => {
+              const globalIdx = startIndex + pageIdx;
+              return (
+                <Card key={q.id} className="border-l-4 border-l-primary/50">
+                  <CardHeader className="pb-2">
+                     <div className="flex justify-between">
+                       <span className="text-xs font-bold text-muted-foreground">Question {globalIdx + 1}</span>
+                       <span className="text-xs text-muted-foreground">{q.subject}</span>
+                     </div>
+                     <h3 className="text-lg font-medium mt-2">{q.text}</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <RadioGroup
+                      onValueChange={(val) => handleSelect(globalIdx, parseInt(val))}
+                      value={answers[globalIdx]?.toString()}
+                    >
+                      {q.options.map((opt, optIdx) => (
+                        <div key={optIdx} className="flex items-center space-x-2 py-2">
+                          <RadioGroupItem value={optIdx.toString()} id={`q${globalIdx}-opt${optIdx}`} />
+                          <Label htmlFor={`q${globalIdx}-opt${optIdx}`} className="font-normal cursor-pointer w-full">
+                            {opt}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </ScrollArea>
       </div>
     </div>
   );
-}
+});
+
+export default MockBoard;

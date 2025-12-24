@@ -19,9 +19,10 @@ export interface Question {
   id: string;
   text: string;
   options: string[];
-  correctAnswer: number; // Index of correct option
+  correctAnswer: number;
   subject: Subject;
-  set: 1 | 2 | 3;
+  set?: number;
+  category?: string;
 }
 
 export interface UserState {

@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useGame } from "@/components/GameContext";
 import { useLocation } from "wouter";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Heart, HelpCircle, AlertCircle, ArrowLeft } from "lucide-react";
+import { Heart, HelpCircle, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   AlertDialog,
@@ -27,7 +26,9 @@ export default function Game() {
     submitAnswer, 
     gameActive,
     useLifeline,
-    lifelineUsed,
+    lifelineActive,
+    lifelineAvailable,
+    consecutiveCorrect,
     endGame
   } = useGame();
   
@@ -63,14 +64,14 @@ export default function Game() {
     }, 1000);
   };
 
-  // 50/50 Logic: Hide 2 wrong answers
+  // 50/50 Logic: Hide 2 wrong answers when lifeline is active
   const hiddenOptions = new Set<number>();
-  if (lifelineUsed) {
+  if (lifelineActive) {
     let hiddenCount = 0;
     const wrongIndices = currentQuestion.options
-      .map((_, idx) => idx)
-      .filter(idx => idx !== currentQuestion.correctAnswer);
-    
+      .map((_: string, idx: number) => idx)
+      .filter((idx: number) => idx !== currentQuestion.correctAnswer);
+
     // Randomly pick 2 wrong to hide
     while (hiddenCount < 2 && wrongIndices.length > 0) {
       const rand = Math.floor(Math.random() * wrongIndices.length);
@@ -139,7 +140,7 @@ export default function Game() {
               </h2>
             </CardHeader>
             <CardContent className="pt-8 space-y-4">
-              {currentQuestion.options.map((option, idx) => (
+              {currentQuestion.options.map((option: string, idx: number) => (
                 <Button
                   key={idx}
                   variant={
@@ -171,11 +172,11 @@ export default function Game() {
                 variant="ghost" 
                 size="sm" 
                 onClick={useLifeline}
-                disabled={lifelineUsed} // Logic handles availability check inside useLifeline too, but visual disabled is good
-                className={lifelineUsed ? "opacity-50" : ""}
+                disabled={!(lifelineAvailable && !lifelineActive)}
+                className={!(lifelineAvailable && !lifelineActive) ? "opacity-50" : ""}
               >
                 <HelpCircle className="mr-2 h-4 w-4" />
-                50/50 Lifeline
+                {lifelineActive ? "50/50 Active" : lifelineAvailable ? "50/50 Available" : "50/50 (Locked)"}
               </Button>
               <div className="text-xs text-muted-foreground">
                 Set {currentQuestion.set}

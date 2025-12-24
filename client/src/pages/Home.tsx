@@ -20,22 +20,44 @@ export default function Home() {
   const [passcode, setPasscode] = useState("");
   const [username, setUsername] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!username) {
       toast({ variant: "destructive", title: "Name required", description: "Please enter your name." });
       return;
     }
 
-    if (selectedRole === "admin") {
-      if (passcode === "123" && username === "leo") { 
-        login(selectedRole, username);
+    try {
+      const password = selectedRole === "admin" ? passcode : "default";
+
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username,
+          password,
+          role: selectedRole
+        }),
+      });
+
+      if (response.ok) {
+        const { user } = await response.json();
+        login(selectedRole!, username);
         setLocation("/dashboard");
+        toast({ title: "Login successful", description: `Welcome, ${username}!` });
       } else {
-         toast({ variant: "destructive", title: "Access Denied", description: "Invalid credentials." });
+        const error = await response.json();
+        toast({
+          variant: "destructive",
+          title: "Login failed",
+          description: error.message || "Invalid credentials."
+        });
       }
-    } else {
-      login(selectedRole!, username);
-      setLocation("/dashboard");
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Login failed",
+        description: "Could not connect to server."
+      });
     }
   };
 

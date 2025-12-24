@@ -5,9 +5,6 @@ import { SUBJECTS } from "@/lib/types";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Play, BookOpen, Lock, CheckCircle2, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -19,15 +16,13 @@ export default function Dashboard() {
   const { toast } = useToast();
   
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
-  const [mockPasscodeOpen, setMockPasscodeOpen] = useState(false);
-  const [mockCreds, setMockCreds] = useState({ pass: "" });
 
   const handleStartStandard = (subject: string, set: number) => {
     startGame("standard", subject, set);
     setLocation("/game");
   };
 
-  const handleStartMock = () => {
+  const handleJoinMockRoom = () => {
     if (isMobile) {
       toast({
         variant: "destructive",
@@ -36,20 +31,7 @@ export default function Dashboard() {
       });
       return;
     }
-    setMockPasscodeOpen(true);
-  };
-
-  const confirmMockStart = () => {
-    if (mockCreds.pass === "123") {
-       startGame("mock");
-       setLocation("/mock-board");
-    } else {
-       toast({
-        variant: "destructive",
-        title: "Access Denied",
-        description: "Invalid credentials. (Hint: pass: 123)",
-      });
-    }
+    setLocation("/room-entry");
   };
 
   return (
@@ -74,7 +56,7 @@ export default function Dashboard() {
                 Standard Review
               </CardTitle>
               <CardDescription>
-                Practice by subject with 10 lives. 3 sets of questions per subject.
+                Practice by subject with 10 lives. Up to 100 questions sampled; 50/50 lifeline unlocks after 5 consecutive correct answers.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -126,7 +108,7 @@ export default function Dashboard() {
             <CardHeader>
               <CardTitle className="text-secondary-foreground font-display text-2xl">Mock Board Exam</CardTitle>
               <CardDescription className="text-secondary-foreground/80">
-                Simulate the actual Licensure Examination for Librarians (LEL).
+                Simulate the actual Licensure Examination for Librarians (LLE).
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -150,13 +132,13 @@ export default function Dashboard() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button 
-                className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90" 
+              <Button
+                className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
                 size="lg"
-                onClick={handleStartMock}
+                onClick={handleJoinMockRoom}
               >
                 <Lock className="mr-2 h-4 w-4" />
-                Enter Mock Board
+                Join Mock Board Room
               </Button>
             </CardFooter>
           </Card>
@@ -173,31 +155,6 @@ export default function Dashboard() {
           </Card>
         </div>
       </div>
-
-      <Dialog open={mockPasscodeOpen} onOpenChange={setMockPasscodeOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Mock Board Access</DialogTitle>
-            <DialogDescription>
-              Enter your examination credentials to proceed.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-4 py-4">
-            <div className="space-y-2">
-              <Label>Passcode</Label>
-              <Input 
-                type="password"
-                value={mockCreds.pass} 
-                onChange={(e) => setMockCreds(prev => ({ ...prev, pass: e.target.value }))}
-                placeholder="Ex: 123"
-              />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button onClick={confirmMockStart}>Begin Exam</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

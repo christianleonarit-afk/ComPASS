@@ -1,0 +1,1 @@
+ALTER TABLE `questions` ADD `category` text DEFAULT 'standard' NOT NULL;

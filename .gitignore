@@ -4,3 +4,6 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+...existing code...
+# ignore Replit local state
+.local/

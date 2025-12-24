@@ -1,0 +1,1333 @@
+[
+  {
+    "id": "LOM-001",
+    "text": "What is the primary purpose of a library's circulation department?",
+    "options": ["Lending materials to patrons","Creating bibliographic records","Preserving rare items","Managing library finances"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-002",
+    "text": "Which activity is central to library management's strategic planning?",
+    "options": ["Assessing community needs","Repairing damaged books","Digitizing a single rare book","Scanning barcodes"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-003",
+    "text": "In most libraries, who is responsible for overall leadership and administration?",
+    "options": ["Library director","Head of acquisitions","Cataloger","Circulation clerk"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-004",
+    "text": "What is a common metric used to measure library usage?",
+    "options": ["Circulation statistics","Number of windows in the building","Shelf height","Printer ink consumption"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-005",
+    "text": "Which policy typically governs acceptable behavior of library users?",
+    "options": ["Code of conduct","Collection development policy","Emergency plan","Budget policy"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-006",
+    "text": "What does 'collection development' refer to in a library context?",
+    "options": ["Selection and maintenance of resources","Building repairs","Staff hiring","Computer maintenance"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-007",
+    "text": "Which department usually handles the acquisition of new books?",
+    "options": ["Acquisitions","Reference","Circulation","IT"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-008",
+    "text": "A library's mission statement primarily communicates what?",
+    "options": ["Purpose and priorities","Number of employees","Floor layout","List of donors"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-009",
+    "text": "Which practice helps ensure equitable access to information?",
+    "options": ["Open hours and accessible services","Keeping rare materials locked away","Limiting internet access","Charging high fees for membership"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-010",
+    "text": "What is a benefit of staff cross-training in libraries?",
+    "options": ["Improved service continuity","Greater shelving speed only","Reduced need for collections","Longer opening hours"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-011",
+    "text": "Which is a strategic priority when planning digital services in libraries?",
+    "options": ["User access and usability","Replacing all print with microfilm","Reducing staff interaction","Encouraging offline only use"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-012",
+    "text": "What does 'outreach' in library services typically involve?",
+    "options": ["Programs and partnerships for the community","Catalog cleanup","Shelving new books","Financial audits"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-013",
+    "text": "Which document guides long-term financial planning for a library?",
+    "options": ["Budget plan","Acquisition invoice","Reference guide","Cataloging manual"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-014",
+    "text": "What is a 'stakeholder' in library planning?",
+    "options": ["An individual or group with an interest in library services","A physical book stake","A shelving tool","A type of catalog record"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-015",
+    "text": "Which approach improves decision-making via data in libraries?",
+    "options": ["Using analytics and usage statistics","Ignoring circulation numbers","Choosing at random","Only collecting anecdotal feedback"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-016",
+    "text": "What is a typical goal of staff development programs?",
+    "options": ["Improve skills and service quality","Replace manual processes with machines only","Reduce customer contact","Increase fines"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-017",
+    "text": "Which is an important consideration for library facilities management?",
+    "options": ["Safety and accessibility","Number of decorative plants","Popularity of the nearest café","Distance from the county line"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-018",
+    "text": "Which metric helps evaluate digital collection usage?",
+    "options": ["Download and access counts","Number of light bulbs","Paper usage","Number of shelves"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-019",
+    "text": "What is a primary function of library policies?",
+    "options": ["Provide consistent service guidelines","Increase borrowing fees only","Restrict member access","Replace strategic planning"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-020",
+    "text": "Why is user feedback important in library services?",
+    "options": ["To improve programs and collections","To limit the number of visitors","To delay acquisitions","To justify closing hours"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-021",
+    "text": "Which activity supports long-term preservation of collections?",
+    "options": ["Conservation and proper storage","Increasing late fees","Shortening opening hours","Reducing staff"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-022",
+    "text": "What does 'e-resource management' typically include?",
+    "options": ["Licensing and access management for digital content","Shelving printed materials","Repairing bindings","IZ checking"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-023",
+    "text": "Which is a common source of library funding?",
+    "options": ["Government grants and budgets","Printer revenue only","Late fee fines only","Book sales only"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-024",
+    "text": "Which role is typically responsible for outreach to schools?",
+    "options": ["Outreach or community librarian","Systems librarian","Cataloger","Security staff"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-025",
+    "text": "Which practice ensures ethical handling of patron data?",
+    "options": ["Adhering to privacy policies","Publishing patron lists","Selling patron data","Deleting circulation records randomly"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-026",
+    "text": "A 'service-level agreement' in library partnerships usually defines what?",
+    "options": ["Expectations, scope, and responsibilities","Book lending periods","Price of coffee at events","Which staff to hire"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-027",
+    "text": "What is disaster planning in libraries intended to address?",
+    "options": ["Risks to collections and continuity of services","Reducing shelf space","Hiring seasonal workers","Increasing fines"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-028",
+    "text": "Which method is used to evaluate the success of a program?",
+    "options": ["Collecting attendance and feedback data","Counting chairs","Measuring shelf depth","Tracking cleaning schedules"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-029",
+    "text": "Intellectual freedom policies in libraries protect what?",
+    "options": ["Access to ideas and expression","Only certain approved titles","Only children's books","Only historical archives"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-030",
+    "text": "Which is an objective of library marketing?",
+    "options": ["Increase awareness and usage of services","Limit patron numbers","Reduce open hours","Charge admission"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-031",
+    "text": "What is a common aim of interlibrary loan services?",
+    "options": ["Provide access to materials beyond a single library's holdings","Limit borrowing","Sell rare items","Archive everything"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-032",
+    "text": "Which factor is important when designing library spaces?",
+    "options": ["Accessibility and user needs","Only aesthetic choices","Number of windows","Paint color exclusively"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-033",
+    "text": "Which tool helps libraries manage tasks and workflows?",
+    "options": ["Integrated library system (ILS)","A paper to-do list","A standard spreadsheet only","A random database"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-034",
+    "text": "Which is an example of a library's performance indicator?",
+    "options": ["Number of program attendees","Shelf height","Number of plants","Length of the desk"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-035",
+    "text": "Why conduct community needs assessments for libraries?",
+    "options": ["To align services with user needs","To limit the collection","To reduce digital services","To standardize prices"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-036",
+    "text": "Which measure helps protect rare materials from damage?",
+    "options": ["Controlled environment and handling procedures","Frequent public handling","Allowing food and drinks","Open shelving without security"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-037",
+    "text": "What is a union catalog?",
+    "options": ["A combined catalog of multiple libraries' holdings","A type of union for librarians","A shelving system","A catalog for magazines only"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-038",
+    "text": "Which plan helps a library prepare for technological changes?",
+    "options": ["IT strategy and road map","Only buying new computers when old ones fail","Hiring without training","Removing all technology"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-039",
+    "text": "Which is a responsibility of library governance bodies?",
+    "options": ["Oversight of policy and budget","Processing new books","Shelving duties","Patron registration"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-040",
+    "text": "What role does benchmarking play in library management?",
+    "options": ["Compare performance to peers and identify improvements","Set arbitrary goals","Replace staff reviews","Reduce services"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-041",
+    "text": "Which approach aids recruitment and retention in libraries?",
+    "options": ["Providing professional development and fair benefits","Cutting staff benefits","Increasing unpaid overtime","Only hiring temporary staff"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-042",
+    "text": "Which is an important consideration when outsourcing library services?",
+    "options": ["Quality, cost, and accountability","Only cost","Only convenience","Only vendor brand"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-043",
+    "text": "Why are data privacy policies essential for libraries?",
+    "options": ["To protect patron information and trust","To increase circulation","To track staff behavior","To sell data"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-044",
+    "text": "What is a key benefit of partnerships with community organizations?",
+    "options": ["Expand outreach and services","Reduce opening hours","Eliminate staff positions","Close branches"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-045",
+    "text": "Which process helps modernize library catalogs for digital access?",
+    "options": ["Cataloging with machine-readable records","Printing more card catalogs","Locking collections","Only microfilming"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-046",
+    "text": "A good volunteer program in libraries provides what?",
+    "options": ["Supplemental support and community engagement","Free permanent staffing","Replacement for paid staff","Only administrative duties"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-047",
+    "text": "Which activity most directly supports lifelong learning?",
+    "options": ["Offering educational programs and resources","Reducing program variety","Only hosting meetings","Limiting public internet"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-048",
+    "text": "Which is an indicator of successful digital inclusion efforts?",
+    "options": ["Increased community internet access and skills","Only higher print circulation","More shelving","More fines"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-049",
+    "text": "Which is a characteristic of user-centered library services?",
+    "options": ["Services designed around user needs and feedback","Services decided without consultation","Only staff convenience","Pay-to-use services"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-050",
+    "text": "Why is accessibility important in library services?",
+    "options": ["To ensure all community members can use library resources","To limit access to certain groups","To increase fees","To archive materials only"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-051",
+    "text": "Which is a common tool used to collect patron feedback?",
+    "options": ["Surveys and suggestion boxes","Only staff meetings","Archival research","Shelving tallies"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-052",
+    "text": "Which role typically manages the library budget and finances?",
+    "options": ["Library director or business manager","Systems librarian","Front desk clerk","Janitorial staff"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-053",
+    "text": "Which practice supports evidence-based decision-making in libraries?",
+    "options": ["Collecting and analyzing usage data","Relying purely on tradition","Avoiding data collection","Ignoring user feedback"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-054",
+    "text": "What is the focus of continuity of operations planning (COOP) in libraries?",
+    "options": ["Maintaining essential services during disruptions","Only preserving books","Posting more hours","Hiring temporary staff"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-055",
+    "text": "Which is a common objective of a library's technology plan?",
+    "options": ["Provide reliable access and future-proofing","Reduce all digital services","Eliminate online catalogs","Only upgrade hardware"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-056",
+    "text": "What role does advocacy play for libraries?",
+    "options": ["Support funding and community support","Only internal staff meetings","Catalog maintenance","Library shelving"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-057",
+    "text": "Which is an effective way to measure learning outcomes from library programs?",
+    "options": ["Pre/post surveys and assessment","Counting chairs","Only anecdotal stories","Attendance without evaluation"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-058",
+    "text": "Why is interdepartmental collaboration important in libraries?",
+    "options": ["To deliver cohesive services across functions","To compete internally","To isolate staff roles","To reduce public services"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-059",
+    "text": "Which practice helps ensure long-term accessibility of digital assets?",
+    "options": ["Digital preservation strategies and backups","Only printing digital files","Deleting old files","Ignoring file formats"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-060",
+    "text": "What is an advantage of having branches in a library system?",
+    "options": ["Increased community access and local services","Higher central costs only","Complicated staffing only","Reduced overall circulation"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-061",
+    "text": "Which is a common reason for library policy revision?",
+    "options": ["Changes in law, technology, or community needs","Keeping things exactly the same","Reducing services only","To increase fines"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-062",
+    "text": "Which is typically included in a library's annual report?",
+    "options": ["Usage statistics and accomplishments","Only complaints","Only a staff list","Only purchase receipts"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-063",
+    "text": "Which approach improves transparency with stakeholders?",
+    "options": ["Regular reporting and public communication","Avoiding meetings","No public data","Only internal memos"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-064",
+    "text": "What is the aim of professional networks for librarians?",
+    "options": ["Share knowledge and best practices","Only local gossip","Competitive secrecy","None of the above"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-065",
+    "text": "Which is a reason libraries adopt open access resources?",
+    "options": ["Increase public access to research","To restrict access","To increase subscription costs","To archive only physical items"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-066",
+    "text": "Which practice supports equitable collection development?",
+    "options": ["Assessing diverse community needs","Only buying bestsellers","Ignoring minority needs","Stockpiling old volumes"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-067",
+    "text": "What is the role of a systems librarian?",
+    "options": ["Manage ILS and technical services","Only shelve books","Manage lawn care","Organize events"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-068",
+    "text": "Which is a major challenge for modern libraries?",
+    "options": ["Balancing digital and physical collections","Finding parking","Selecting paint colors","Increasing shelf height"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-069",
+    "text": "Which is an example of a cooperative library service?",
+    "options": ["Resource sharing via interlibrary loan","Individual libraries operating alone","Closed stacks only","Exclusive membership"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-070",
+    "text": "Which factor should guide collection weeding?",
+    "options": ["Usage, condition, and relevance","Age of staff","Building color","Shelf labels"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-071",
+    "text": "What is a public library's core mission?",
+    "options": ["Provide free access to information and resources","Maximize profit","Limit services to members only","Only serve researchers"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-072",
+    "text": "Which is an effective way to increase library program attendance?",
+    "options": ["Targeted promotion and community partnerships","Reducing program variety","Raising prices","Shortening schedules"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-073",
+    "text": "What does 'triage' of donations refer to?",
+    "options": ["Sorting donated items for relevance and condition","Putting all donations on display","Charging donors","Refusing all gifts"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-074",
+    "text": "Which approach helps manage licensing costs for e-resources?",
+    "options": ["Consortial purchasing and usage review","Buying individually without review","Ignoring usage data","Only buying print"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-075",
+    "text": "What is a benefit of a user advisory group?",
+    "options": ["Direct user input to improve services","Only managerial opinions","No user involvement","Only fundraising"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-076",
+    "text": "Which measure supports data-informed collection decisions?",
+    "options": ["Combine circulation stats with user surveys","Only staff preference","Only vendor suggestions","No data at all"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-077",
+    "text": "Which is a responsibility of library outreach services?",
+    "options": ["Engage underserved populations and provide programs","Count books only","Only manage the catalog","Only field technical support"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-078",
+    "text": "Which concept relates to making library materials discoverable online?",
+    "options": ["Metadata and cataloging","Only doors and signage","Only physical shelf lists","Only microfiche"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-079",
+    "text": "Which planning activity involves engaging stakeholders for input?",
+    "options": ["Community consultation and surveys","Only private meetings","Ignoring public input","Only staff memos"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-080",
+    "text": "Which is a typical outcome of a successful fundraising campaign?",
+    "options": ["Additional funds for programs or capital projects","Only increased staff workload","Reduced public services","Higher fines"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-081",
+    "text": "Why are licensing terms important for e-resources?",
+    "options": ["They determine usage rights and access","They determine shelf placement","They change physical book size","They set opening hours"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-082",
+    "text": "Which is a responsibility of technical services in libraries?",
+    "options": ["Processing and preparing materials for use","Providing reference services","Manning circulation desks","Cleaning facilities"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-083",
+    "text": "Which activity often follows a community needs assessment?",
+    "options": ["Realigning services and collections","Doing nothing","Cutting programs randomly","Hiring without plan"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-084",
+    "text": "Which factor should be considered when expanding library hours?",
+    "options": ["Demand, staffing, and budget","Only staff preference","Only building open times","Only noise levels"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-085",
+    "text": "What is a first step in creating a digital collection?",
+    "options": ["Define scope, rights, and infrastructure needs","Buy as many scanners as possible","Close the print collection","Ignore copyright"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-086",
+    "text": "Which is an advantage of hosting public programs in libraries?",
+    "options": ["Community engagement and learning opportunities","Only increased use of restrooms","Higher fines","Lower circulation"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-087",
+    "text": "Which is a common reason for digitizing materials?",
+    "options": ["Preservation and enhanced access","To reduce visitor numbers","To avoid cataloging","To remove originals"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-088",
+    "text": "Which factor helps prioritize acquisitions for a limited budget?",
+    "options": ["Relevance to community needs and usage data","Only staff preference","Only vendor catalogs","Only bestseller lists"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-089",
+    "text": "Which is an example of an ethical issue in libraries?",
+    "options": ["Balancing access and privacy","Counting books incorrectly","Only staff retention","Catalog font choices"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-090",
+    "text": "What does 'user-centered design' mean for library websites?",
+    "options": ["Design focused on user tasks and usability","Only featuring staff photos","Complex menus only","No search box"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-091",
+    "text": "Which is important for successful volunteer coordination?",
+    "options": ["Clear roles and training","Randomly assigning tasks","No supervision","Only paperwork"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-092",
+    "text": "Why is it important to monitor vendor performance for services?",
+    "options": ["To ensure contractual obligations and service quality","To only cut costs","To avoid communication","To rely on assumptions"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-093",
+    "text": "Which is a benefit of providing makerspace services in libraries?",
+    "options": ["Promote hands-on learning and creativity","Reduce foot traffic","Eliminate staff","Increase fines"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-094",
+    "text": "Which is a common consideration for mobile library services?",
+    "options": ["Service routes, schedules, and accessibility","Only vehicle color","Number of chairs inside","Shelf size"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-095",
+    "text": "What is the purpose of a library strategic plan?",
+    "options": ["Set priorities and guide resource allocation","List all books","Only serve donors","Replace staff"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-096",
+    "text": "Which is a best practice when evaluating vendors for e-resources?",
+    "options": ["Consider price, usage, and licensing terms","Only price matters","Only brand matters","Ignore licensing"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-097",
+    "text": "Which is a core consideration in staffing models for libraries?",
+    "options": ["Match skills to service needs and budget","Only hire more staff","Only hire temporarily","Avoid skill development"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-098",
+    "text": "Which is a reason libraries maintain archives and local history collections?",
+    "options": ["Preserve community memory and unique materials","To restrict public access","Only for fundraising","Only for staff use"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-099",
+    "text": "Which factor helps determine service priorities during budget cuts?",
+    "options": ["Community impact and mission alignment","Only preserving staff jobs","Reducing access","Only keeping popular books"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+  {
+    "id": "LOM-100",
+    "text": "Which principle guides ethical librarianship?",
+    "options": ["Intellectual freedom, access, and privacy","Maximizing revenue","Limiting access","Only serving researchers"],
+    "correctAnswer": 0,
+    "subject": "Library Organization and Management"
+  },
+
+  {
+    "id": "REF-001",
+    "text": "What is the main goal of reference services in a library?",
+    "options": ["Help users find and use information","Sell library merchandise","Repair books","Build shelves"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-002",
+    "text": "Which skill is most essential for reference librarians?",
+    "options": ["Information searching and evaluation","Painting","Hardware repair","Tree trimming"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-003",
+    "text": "A bibliography primarily serves what purpose?",
+    "options": ["List sources relevant to a topic","Organize library budget","Shelve books","Provide user cards"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-004",
+    "text": "Which is an example of user services in libraries?",
+    "options": ["Reader advisory and instruction","Only cataloging","Only acquisitions","Only shelving"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-005",
+    "text": "What is 'reader advisory' in library services?",
+    "options": ["Helping patrons select books based on interests","Repairing bindings","Digitization","Creating invoices"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-006",
+    "text": "Which is a primary format for bibliographic description?",
+    "options": ["Citations in standard styles (APA, MLA)","Shelf labels","Phone numbers","Floor plans"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-007",
+    "text": "Which method is used to evaluate the quality of sources?",
+    "options": ["Authority, accuracy, currency, and relevance","Color of the cover","Weight of the book","Size of font"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-008",
+    "text": "Which service helps users learn how to search databases?",
+    "options": ["Information literacy instruction","Only lending books","Selling search guides","Only providing Wi-Fi"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-009",
+    "text": "What is an annotated bibliography?",
+    "options": ["A list of sources with brief descriptions or evaluations","A list of shelf locations","A list of donors","A list of fines"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-010",
+    "text": "Which is a common way to deliver reference help remotely?",
+    "options": ["Chat, email, and phone reference","Only in-person service","Only paper mail","Only voicemail"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-011",
+    "text": "What is the role of a subject librarian?",
+    "options": ["Provide specialized reference and collection support for a discipline","Fix printers only","Shelve new books","Lock rare materials"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-012",
+    "text": "Which database best supports scholarly research?",
+    "options": ["Discipline-specific scholarly databases","General social media","Shopping sites","Entertainment blogs"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-013",
+    "text": "Which is a best practice when answering a reference question?",
+    "options": ["Clarify the user's needs and show search techniques","Only hand a book","Only provide an article without explanation","Ignore the user"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-014",
+    "text": "Which record type provides a bibliographic description of a book?",
+    "options": ["MARC bibliographic record","Circulation slip","Invoice","Meeting minutes"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-015",
+    "text": "Which is a key element of user-centered reference?",
+    "options": ["Patron-focused listening and instruction","Only catalog maintenance","Only acquisitions","Only shelving"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-016",
+    "text": "What is a 'literature review' used for?",
+    "options": ["Summarize and synthesize existing research on a topic","Classify books physically","Label the shelves","Schedule programs"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-017",
+    "text": "Which tool helps with citation management?",
+    "options": ["Reference managers like Zotero or EndNote","Shelf markers","Barcode printers","Only spreadsheets"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-018",
+    "text": "Which is an example of a tertiary source?",
+    "options": ["Encyclopedias and handbooks","Primary research articles","Laboratory notebooks","Field data"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-019",
+    "text": "Which is a key step in creating a bibliography?",
+    "options": ["Identify relevant sources and record citations","Paint shelves","Only collect ISBNs","Only collect titles"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-020",
+    "text": "Which approach improves remote user services?",
+    "options": ["Provide clear online guides, chat, and virtual consultations","Only in-person help","Only recorded messages","Only voicemail support"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-021",
+    "text": "Which is a commonly used bibliographic format for academic papers?",
+    "options": ["APA, MLA, or Chicago","Phone book format","Inventory format","Only title lists"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-022",
+    "text": "Why is source evaluation important for users?",
+    "options": ["To ensure accuracy and credibility of information","To limit access","To increase printing costs","To prioritize older materials"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-023",
+    "text": "Which method helps patrons discover regional history resources?",
+    "options": ["Curated local guides and specialized bibliographies","Only general catalogs","Only the main circulation desk","Only vendor lists"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-024",
+    "text": "What is the benefit of bibliographic instruction for students?",
+    "options": ["Improves research skills and citation practices","Only reduces borrowing","Only improves shelving","Only increases fees"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-025",
+    "text": "Which resource is best for background information on a topic?",
+    "options": ["Encyclopedias and handbooks","Laboratory data","Original datasets","Unpublished notes"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-026",
+    "text": "Which task is commonly performed by a reference librarian?",
+    "options": ["Guide complex searches and recommend sources","Repair circulation slips","Paint library signs","Manage the cafeteria"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-027",
+    "text": "Which is a characteristic of a reliable scholarly source?",
+    "options": ["Peer review and citations","Colorful cover","Thin paper","Only short length"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-028",
+    "text": "Which component is essential in a good bibliographic citation?",
+    "options": ["Author, title, publication date, and source details","Only the author's name","Only the price","Only the ISBN"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-029",
+    "text": "Which service often uses interlibrary loan to help patrons?",
+    "options": ["Reference services for hard-to-find materials","Only local circulation","Only physical browsing","Only in-house reserves"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "REF-030",
+    "text": "Which format is typically used for citing journal articles?",
+    "options": ["Author(s), year, article title, journal, volume, pages","Only journal name","Only the year","Only the URL"],
+    "correctAnswer": 0,
+    "subject": "Reference, Bibliography, and User Services"
+  },
+  {
+    "id": "CAT-001",
+    "text": "What is the main purpose of cataloging?",
+    "options": ["Describe and provide access to library materials","Repair books","Manage budgets","Organize events"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-002",
+    "text": "Which classification system is commonly used in public libraries?",
+    "options": ["Dewey Decimal Classification","Universal Decimal System","Library of Congress only","ISBN system"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-003",
+    "text": "What does MARC stand for in bibliographic standards?",
+    "options": ["Machine-Readable Cataloging","Manual Record and Catalog","Metadata Record for Archives","Managerial Record Catalog"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-004",
+    "text": "Which element is essential in a bibliographic record?",
+    "options": ["Title and author information","Number of pages only","Shelf location only","Invoice number only"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-005",
+    "text": "Which is a benefit of using standardized subject headings?",
+    "options": ["Improve discoverability across catalogs","Only reduce staff work","Increase printing costs","Limit collection growth only"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-006",
+    "text": "Which metadata element helps users find materials by topic?",
+    "options": ["Subject headings and keywords","Barcode number only","Invoice date only","Shelf height"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-007",
+    "text": "What is the primary goal of classification in libraries?",
+    "options": ["Group similar topics together for browsing","Increase fines","Limit access","Only for staff use"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-008",
+    "text": "Which system organizes materials by alphanumeric call numbers?",
+    "options": ["Library of Congress Classification","Dewey only","ISBN","ISSN"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-009",
+    "text": "Which record format is commonly exchanged between libraries?",
+    "options": ["MARC21","Word documents","PDF invoices","JPEG images"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-010",
+    "text": "Which activity helps maintain consistent catalog records?",
+    "options": ["Authority control for names and subjects","Only re-shelving","Only discarding old records","Only manager approval"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-011",
+    "text": "Which is an example of descriptive cataloging?",
+    "options": ["Recording title, author, edition, and publication details","Selecting books to buy","Repairing a spine","Picking program topics"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-012",
+    "text": "Which metadata standard supports interoperability for digital resources?",
+    "options": ["Dublin Core","A local spreadsheet","Only paper files","A photo album"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-013",
+    "text": "What is authority control used for?",
+    "options": ["Maintain consistent names and headings","Charge fines","Lock collections","Hire staff"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-014",
+    "text": "Which is a benefit of integrated library systems (ILS)?",
+    "options": ["Centralize cataloging, circulation, and acquisitions","Only track staff hours","Only manage payroll","Only handle cleaning schedules"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-015",
+    "text": "Which practice improves discoverability of rare or unique items?",
+    "options": ["Create enhanced descriptive metadata and finding aids","Only keep them in locked rooms","Remove them from catalogs","Only keep paper lists"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-016",
+    "text": "What should a cataloger do when a work has multiple authors?",
+    "options": ["Record all main contributors and use appropriate access points","Only list the first author","Ignore others","Only list editors"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-017",
+    "text": "Which is an important consideration for classifying interdisciplinary works?",
+    "options": ["Choose classification that best serves user discovery","Always choose the first listed subject","Never change classification","Only use numerical codes"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-018",
+    "text": "Which is a common cause of duplicate records in catalogs?",
+    "options": ["Ingesting records from multiple sources without de-duplication","Keeping one record for each copy","Throwing out older records","Only using local records"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-019",
+    "text": "Which is a purpose of subject analysis in cataloging?",
+    "options": ["Identify main topics and assign appropriate headings","Only note publisher names","Only record printing costs","Only track number of pages"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "CAT-020",
+    "text": "Which is an advantage of linked data in library catalogs?",
+    "options": ["Improve resource discovery through structured, connected data","Decrease discoverability","Increase only printing","Limit access to staff"],
+    "correctAnswer": 0,
+    "subject": "Cataloging and Classification"
+  },
+  {
+    "id": "IDX-001",
+    "text": "What is the main goal of indexing?",
+    "options": ["Facilitate retrieval of information by pointing to relevant content","Only reorder books","Create a reading list","Sell indexes"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-002",
+    "text": "What does an abstract provide for a scholarly article?",
+    "options": ["A concise summary of the article's key points","The full text only","The author's biography","A list of references"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-003",
+    "text": "Which feature improves index usefulness?",
+    "options": ["Specific, consistent subject terms and cross-references","Only alphabetical lists","Only page numbers","Only illustrations"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-004",
+    "text": "Which is a type of index often found at the back of a book?",
+    "options": ["Topical index","Invoice index","Staff index","Shelf index"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-005",
+    "text": "Which is a key skill for creating abstracts?",
+    "options": ["Summarization and identification of main ideas","Shelf marking","Binding","Repairing pages"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-006",
+    "text": "Which is a purpose of controlled vocabulary in indexing?",
+    "options": ["Ensure consistency and improve retrieval","Only increase complexity","Reduce cross-references","Increase costs"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-007",
+    "text": "Which index type is important for legal materials?",
+    "options": ["Case or subject index specific to legal topics","Only a circulation index","Only staff index","Only publication index"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-008",
+    "text": "Which is an element of a good abstract?",
+    "options": ["Clarity, conciseness, and coverage of main points","Multiple long quotations","Detailed background history","Only the conclusion"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-009",
+    "text": "Which tool helps map concepts to standard terms?",
+    "options": ["Thesaurus or controlled vocabulary","Random word lists","Only synonyms","Only human memory"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-010",
+    "text": "Why are cross-references important in indexes?",
+    "options": ["They guide users from one related term to another","To increase page counts","To replace abstracts","To confuse users"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-011",
+    "text": "Which is a challenge in automated indexing?",
+    "options": ["Understanding context and nuance in text","Only printing speed","Only page numbering","Only font choices"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-012",
+    "text": "Which is a common format for abstracts in conference proceedings?",
+    "options": ["Structured abstracts with sections like background and methods","Only full papers","Only slides","Only posters"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-013",
+    "text": "What is a concordance in indexing?",
+    "options": ["An alphabetical listing of words with locations in a text","Only author lists","Only tables of content","Only figure lists"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-014",
+    "text": "Which is important when writing abstracts for systematic reviews?",
+    "options": ["Clear summary of objectives, methods, and findings","Only the title","Only the authors","Only the conclusion"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-015",
+    "text": "Which indexing practice improves search recall?",
+    "options": ["Including variant terms and synonyms","Only one term per concept","Never using cross-references","Only using abbreviations"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-016",
+    "text": "Which is often included in an abstract for a scientific article?",
+    "options": ["Methods, results, and conclusions","Only a list of references","Only acknowledgments","Only the author's name"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-017",
+    "text": "What is semantic indexing intended to capture?",
+    "options": ["Meaning and relationships between concepts","Only keywords","Only page numbers","Only author names"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-018",
+    "text": "Which is a benefit of abstracts for researchers?",
+    "options": ["Quickly assess relevance of an article","Only increase reading time","Only confuse readers","Only print more pages"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-019",
+    "text": "Which resource provides standardized indexing terms for medical literature?",
+    "options": ["MeSH (Medical Subject Headings)","Dewey only","Local shelf labels","Phone directories"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "IDX-020",
+    "text": "Which is an example of descriptive indexing?",
+    "options": ["Assigning terms that reflect the content","Only numerical indexing","Only author lists","Only publisher information"],
+    "correctAnswer": 0,
+    "subject": "Indexing and Abstracting"
+  },
+  {
+    "id": "SA-001",
+    "text": "What is the main focus of selection and acquisition in libraries?",
+    "options": ["Choosing and purchasing materials that meet user needs","Only shelving books","Only discarding old items","Only cataloging"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-002",
+    "text": "Which factor is important when selecting materials for a collection?",
+    "options": ["Relevance to community, budget, and collection policy","Only cover design","Only author popularity","Only publisher recommendations"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-003",
+    "text": "What does 'licensing' often apply to in acquisitions?",
+    "options": ["E-resources and databases","Only print purchases","Only local donations","Only furniture"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-004",
+    "text": "Which is an advantage of standing orders?",
+    "options": ["Automatic acquisition of series titles as they are published","Only ordering randomly","Only acquiring duplicates","Only for periodicals"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-005",
+    "text": "Why is vendor selection important in acquisitions?",
+    "options": ["Affects price, availability, and service","Only for cataloging","Only for shelving","Only for building maintenance"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-006",
+    "text": "Which is a typical step after ordering a new book?",
+    "options": ["Receive, invoice, process, and catalog the item","Only announce it","Only place it on a display","Only add to a wish list"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-007",
+    "text": "What is the purpose of a collection development policy?",
+    "options": ["Guide selection and ensure consistent criteria","Only track donors","Only count pages","Only for staff use"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-008",
+    "text": "Which is a common method for evaluating vendors' performance?",
+    "options": ["Review delivery times, billing accuracy, and availability","Only brand name","Only sales pitch","Only marketing brochures"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-009",
+    "text": "Why is weeding important in collection management?",
+    "options": ["Maintain relevant, usable, and balanced collections","To increase shelf pressure","Only to reduce space","Only to hide materials"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "SA-010",
+    "text": "Which is a typical acquisition budget consideration?",
+    "options": ["Allocation by subject need and demand","Only staff preferences","Only vendor fees","Only membership numbers"],
+    "correctAnswer": 0,
+    "subject": "Selection and Acquisition"
+  },
+  {
+    "id": "IT-001",
+    "text": "Which is a core responsibility of library information technology?",
+    "options": ["Maintain network, systems, and user access to digital resources","Only repair chairs","Only staff hiring","Only event scheduling"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-002",
+    "text": "What is an integrated library system (ILS)?",
+    "options": ["Software that manages cataloging, circulation, and acquisitions","A physical shelving system","A budget file","An event calendar"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-003",
+    "text": "Which practice helps secure patron data?",
+    "options": ["Encryption and strong access controls","Only printing records","Publicly posting records","Sharing passwords"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-004",
+    "text": "What is the purpose of single sign-on (SSO) in library systems?",
+    "options": ["Enable seamless access to multiple services with one login","Only allow staff access","Only used for payment","Only used offline"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-005",
+    "text": "Which is important for website accessibility?",
+    "options": ["Conformance to WCAG standards","Only visual design","Only speed","Only images"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-006",
+    "text": "What is a common use of RFID in libraries?",
+    "options": ["Self-checkout and inventory tracking","Only security","Only cataloging","Only shelving"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-007",
+    "text": "Which technology helps with digital preservation?",
+    "options": ["Migration and emulation","Only printing","Only microfiche","Only memory"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-008",
+    "text": "What is a digital repository?",
+    "options": ["A system for storing and accessing digital content","A physical storage room","A book truck","A catalog card"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-009",
+    "text": "Which is a benefit of cloud computing for libraries?",
+    "options": ["Scalable storage and access","Only local servers","Only paper records","Only in-person service"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  },
+  {
+    "id": "IT-010",
+    "text": "What is metadata in digital libraries?",
+    "options": ["Data about data that describes digital objects","Only file names","Only file sizes","Only colors"],
+    "correctAnswer": 0,
+    "subject": "Information Technology"
+  }
+]
