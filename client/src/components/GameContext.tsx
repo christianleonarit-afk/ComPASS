@@ -304,8 +304,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
 
     if (gameMode === "mock") {
       const totalQuestions = currentQuestions.length;
-      const percentage = (score / totalQuestions) * 100;
-      const passed = percentage >= 75;
+      const overallPercentage = (score / totalQuestions) * 100;
 
       // Calculate subject-wise scores
       const subjectScores: Record<string, {correct: number, total: number, percentage: number}> = {};
@@ -337,28 +336,27 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
         };
       });
 
-      // Calculate weighted final score using LIS standards
+      // Calculate weighted final score using LIS standards (subject percentages)
       let weightedScore = 0;
       let totalWeight = 0;
 
       Object.entries(SUBJECTS).forEach(([subject, weight]) => {
         if (subjectScores[subject]) {
+          // Weight is the percentage value (e.g., 20 for Library Organization)
+          // Multiply subject percentage by its weight and divide by 100
           weightedScore += (subjectScores[subject].percentage * weight) / 100;
           totalWeight += weight;
         }
       });
 
-      const finalWeightedScore = totalWeight > 0 ? weightedScore : percentage;
-
-      const details: Record<string, number> = {};
-      Object.entries(subjectScores).forEach(([subject, scores]) => {
-        details[subject] = scores.percentage;
-      });
+      // The weightedScore is now the sum of (subject_percentage * subject_weight / 100)
+      // Since weights total 100%, this gives us the final weighted percentage
+      const finalWeightedScore = totalWeight > 0 ? weightedScore : overallPercentage;
 
       setMockResults({
         score: finalWeightedScore,
         passed: finalWeightedScore >= 75,
-        details,
+        details: {}, // Remove old details, we'll show subjectScores instead
         subjectScores
       });
 

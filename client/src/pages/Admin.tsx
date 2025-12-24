@@ -273,9 +273,29 @@ export default function Admin() {
                 }
               }
 
-              // Skip the subject line if it exists
+              // Parse subject line
+              let subject: Subject = 'Library Organization and Management' as Subject;
               if (i < lines.length && lines[i].length > 5 && lines[i].length < 100) {
-                i++; // Skip subject line
+                const subjectLine = lines[i].trim();
+                // Try to match against known subjects
+                const availableSubjects: Subject[] = [
+                  "Library Organization and Management",
+                  "Reference, Bibliography and User Services",
+                  "Cataloging and Classification",
+                  "Indexing and Abstracting",
+                  "Selection and Acquisition",
+                  "Information Technology"
+                ];
+
+                // Check if the line matches any known subject (case insensitive, partial match)
+                for (const knownSubject of availableSubjects) {
+                  if (subjectLine.toLowerCase().includes(knownSubject.toLowerCase().split(',')[0].split(' and ')[0])) {
+                    subject = knownSubject;
+                    break;
+                  }
+                }
+                console.log(`Detected subject: "${subjectLine}" -> "${subject}"`);
+                i++; // Move past subject line
               }
 
               // If we have a question and at least 4 options, save it
@@ -285,11 +305,11 @@ export default function Admin() {
                   text: questionText,
                   options: options.slice(0, 4), // Ensure exactly 4 options
                   correctAnswer: correctAnswer,
-                  subject: 'Library Organization and Management' as Subject,
+                  subject: subject,
                   set: 1,
                   category: 'mockboard'
                 });
-                console.log(`Imported question ${importedQuestions.length}:`, questionText, 'Answer:', correctAnswer);
+                console.log(`Imported question ${importedQuestions.length}:`, questionText, 'Answer:', correctAnswer, 'Subject:', subject);
               } else {
                 console.log(`Skipping invalid question: "${questionText?.substring(0, 50)}..." - options: ${options.length}, answer: ${correctAnswer}`);
               }
