@@ -201,9 +201,9 @@ export async function registerRoutes(
     try {
       const { db } = await import("./db");
       const { mockboardQuestions } = await import("../shared/schema");
-      const { desc } = await import("drizzle-orm");
+      const { asc } = await import("drizzle-orm");
 
-      const questions = await db.select().from(mockboardQuestions).orderBy(desc(mockboardQuestions.id));
+      const questions = await db.select().from(mockboardQuestions).orderBy(asc(mockboardQuestions.imported_at));
       res.json(questions);
     } catch (e) {
       next(e);
