@@ -44,44 +44,59 @@ export default function Admin() {
     if (!managingRoom) return;
 
     try {
+      console.log('Starting room deletion for:', managingRoom.name, 'ID:', managingRoom.id);
+
       // First delete the questions associated with this room
+      let deletedQuestions = 0;
       if (managingRoom.questionIds && managingRoom.questionIds.length > 0) {
-        console.log('Deleting questions for room:', managingRoom.questionIds);
+        console.log('Deleting questions for room:', managingRoom.questionIds.length, 'questions');
+
         for (const questionId of managingRoom.questionIds) {
           try {
+            console.log('Attempting to delete question:', questionId);
             const deleteResponse = await fetch(`/api/mockboard-questions/${questionId}`, {
               method: 'DELETE',
             });
-            if (!deleteResponse.ok) {
-              console.warn(`Failed to delete question ${questionId}`);
+
+            if (deleteResponse.ok) {
+              deletedQuestions++;
+              console.log('Successfully deleted question:', questionId);
+            } else {
+              const errorText = await deleteResponse.text();
+              console.error(`Failed to delete question ${questionId}:`, deleteResponse.status, errorText);
             }
           } catch (error) {
-            console.warn(`Error deleting question ${questionId}:`, error);
+            console.error(`Error deleting question ${questionId}:`, error);
           }
         }
       }
 
       // Then delete the room
+      console.log('Now deleting the room itself');
       const response = await fetch(`/api/rooms/${managingRoom.id}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
+        console.log('Room deleted successfully');
         setRooms(prev => prev.filter(r => r.id !== managingRoom.id));
         setShowManageDialog(false);
         setManagingRoom(null);
         toast({
-          title: "Room Deleted",
-          description: `Room "${managingRoom.name}" and its ${managingRoom.questionIds?.length || 0} questions have been removed.`,
+          title: "Room Deleted Successfully",
+          description: `Room "${managingRoom.name}" deleted. ${deletedQuestions} questions removed.`,
         });
       } else {
-        throw new Error('Failed to delete room');
+        const errorText = await response.text();
+        console.error('Failed to delete room:', response.status, errorText);
+        throw new Error(`Failed to delete room: ${response.status}`);
       }
     } catch (error) {
+      console.error('Room deletion error:', error);
       toast({
         variant: "destructive",
         title: "Delete Failed",
-        description: "Could not delete the room. Please try again.",
+        description: error instanceof Error ? error.message : "Could not delete the room. Check console for details.",
       });
     }
   };
