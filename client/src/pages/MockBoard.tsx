@@ -142,17 +142,40 @@ const MockBoard = memo(function MockBoard() {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-center">Subject-wise Performance</h3>
-              {Object.entries(contextResults.subjectScores).map(([subject, scores]: [string, any]) => (
-                <div key={subject} className="flex justify-between items-center p-3 border rounded-lg">
-                  <span className="font-medium">{subject}</span>
-                  <div className="text-right">
-                    <span className="font-bold">{scores.percentage.toFixed(1)}%</span>
-                    <span className="text-sm text-muted-foreground ml-2">
-                      ({scores.correct}/{scores.total})
-                    </span>
+              {Object.entries(contextResults.subjectScores).map(([subject, scores]: [string, any]) => {
+                // Calculate grade based on percentage
+                let grade = '';
+                let gradeColor = '';
+                if (scores.percentage >= 90) {
+                  grade = 'A (Excellent)';
+                  gradeColor = 'text-green-600';
+                } else if (scores.percentage >= 80) {
+                  grade = 'B (Very Good)';
+                  gradeColor = 'text-blue-600';
+                } else if (scores.percentage >= 70) {
+                  grade = 'C (Good)';
+                  gradeColor = 'text-yellow-600';
+                } else if (scores.percentage >= 60) {
+                  grade = 'D (Satisfactory)';
+                  gradeColor = 'text-orange-600';
+                } else {
+                  grade = 'F (Needs Improvement)';
+                  gradeColor = 'text-red-600';
+                }
+
+                return (
+                  <div key={subject} className="p-4 border rounded-lg space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="font-medium">{subject}</span>
+                      <span className={`font-bold text-lg ${gradeColor}`}>{grade}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span>Score: {scores.correct}/{scores.total}</span>
+                      <span className="font-semibold">{scores.percentage.toFixed(1)}%</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <p className="text-muted-foreground text-center">
