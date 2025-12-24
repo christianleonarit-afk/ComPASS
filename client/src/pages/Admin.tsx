@@ -38,7 +38,7 @@ export default function Admin() {
     console.log('Delete room called for:', room);
 
     const confirmDelete = window.confirm(
-      `Are you sure you want to delete the room "${room.name}"?\n\nThis will also delete ${room.questionIds?.length || 0} questions associated with this room.`
+      `Are you sure you want to delete the room "${room.name}"?\n\nThe questions will remain in the database for other uses.`
     );
 
     if (!confirmDelete) {
@@ -49,35 +49,8 @@ export default function Admin() {
     console.log('User confirmed deletion, proceeding...');
 
     try {
-      console.log('Starting room deletion for:', room.name, 'ID:', room.id);
+      console.log('Deleting room:', room.name, 'ID:', room.id);
 
-      // First delete the questions associated with this room
-      let deletedQuestions = 0;
-      if (room.questionIds && room.questionIds.length > 0) {
-        console.log('Deleting questions for room:', room.questionIds.length, 'questions');
-
-        for (const questionId of room.questionIds) {
-          try {
-            console.log('Attempting to delete question:', questionId);
-            const deleteResponse = await fetch(`/api/mockboard-questions/${questionId}`, {
-              method: 'DELETE',
-            });
-
-            if (deleteResponse.ok) {
-              deletedQuestions++;
-              console.log('Successfully deleted question:', questionId);
-            } else {
-              const errorText = await deleteResponse.text();
-              console.error(`Failed to delete question ${questionId}:`, deleteResponse.status, errorText);
-            }
-          } catch (error) {
-            console.error(`Error deleting question ${questionId}:`, error);
-          }
-        }
-      }
-
-      // Then delete the room
-      console.log('Now deleting the room itself');
       const response = await fetch(`/api/rooms/${room.id}`, {
         method: 'DELETE',
       });
@@ -87,7 +60,7 @@ export default function Admin() {
         setRooms(prev => prev.filter(r => r.id !== room.id));
         toast({
           title: "Room Deleted Successfully",
-          description: `Room "${room.name}" deleted. ${deletedQuestions} questions removed.`,
+          description: `Room "${room.name}" deleted successfully.`,
         });
       } else {
         const errorText = await response.text();

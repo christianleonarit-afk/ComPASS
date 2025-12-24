@@ -110,7 +110,8 @@ export class QuestionStorage {
   async getBulkMockboard(ids: string[]): Promise<Question[]> {
     if (db) {
       const rows = await db.select().from(mockboardQuestions).where(inArray(mockboardQuestions.id, ids));
-      return rows.map((r: any) => ({
+      // Create a map for quick lookup
+      const questionMap = new Map(rows.map((r: any) => [r.id, {
         id: r.id,
         text: r.text,
         options: r.options,
@@ -118,7 +119,9 @@ export class QuestionStorage {
         subject: r.subject,
         set: r.set,
         category: 'mockboard'
-      }));
+      }]));
+      // Return questions in the same order as the ids array
+      return ids.map(id => questionMap.get(id)).filter(Boolean) as Question[];
     }
     // Fallback for file-based storage (not applicable for mockboard)
     return [];
