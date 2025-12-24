@@ -7,7 +7,7 @@ import { mockboardQuestions } from "../../../shared/schema";
 
 // Configuration constants
 const MAX_QUESTIONS = 100;
-const MOCKBOARD_MAX_QUESTIONS = 650; // Maximum questions for mockboard exam
+const MOCKBOARD_MAX_QUESTIONS = 1000; // Maximum questions for mockboard exam
 const INITIAL_LIVES = 10;
 const LIFELINE_THRESHOLD = 5;
 
