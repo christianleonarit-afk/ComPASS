@@ -182,8 +182,8 @@ export async function registerRoutes(
       const endIndex = Math.min(startIndex + batchSize, totalQuestions);
       const batchIds = room.questionIds.slice(startIndex, endIndex);
 
-      // Use bulk database query for better performance
-      const questions = await questionStorage.getBulk(batchIds);
+      // Use bulk database query for mockboard questions
+      const questions = await questionStorage.getBulkMockboard(batchIds);
 
       res.json({
         questions,

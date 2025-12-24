@@ -107,6 +107,25 @@ export class QuestionStorage {
     return all.filter((q) => ids.includes(q.id));
   }
 
+  async getBulkMockboard(ids: string[]): Promise<Question[]> {
+    if (db) {
+      // Import mockboard_questions schema dynamically
+      const { mockboardQuestions } = await import("../shared/schema");
+      const rows = await db.select().from(mockboardQuestions).where(inArray(mockboardQuestions.id, ids));
+      return rows.map((r: any) => ({
+        id: r.id,
+        text: r.text,
+        options: r.options,
+        correctAnswer: r.correct_answer,
+        subject: r.subject,
+        set: r.set,
+        category: 'mockboard'
+      }));
+    }
+    // Fallback for file-based storage (not applicable for mockboard)
+    return [];
+  }
+
   async create(payload: Omit<Question, "id">): Promise<Question> {
     if (db) {
       const id = randomUUID();
