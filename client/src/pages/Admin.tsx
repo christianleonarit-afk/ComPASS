@@ -345,7 +345,8 @@ export default function Admin() {
         console.log('Imported questions:', importedQuestions); // Debug: Show all imported questions
 
         setImportedQuestions(importedQuestions);
-        importQuestions(importedQuestions);
+        // Note: We don't call importQuestions here anymore to avoid duplication
+        // The questions will be saved when creating the room
         toast({
           title: "Import Successful",
           description: `${importedQuestions.length} questions imported successfully.`,
@@ -603,8 +604,12 @@ export default function Admin() {
               </Button>
               <Button
                 variant="destructive"
-                onClick={handleDeleteRoom}
+                onClick={() => {
+                  console.log('Delete Room button clicked');
+                  handleDeleteRoom();
+                }}
                 className="flex-1"
+                disabled={!managingRoom}
               >
                 Delete Room
               </Button>
