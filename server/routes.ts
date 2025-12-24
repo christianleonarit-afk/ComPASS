@@ -245,13 +245,16 @@ export async function registerRoutes(
         return res.status(400).json({ message: "Questions array required" });
       }
 
-      const values = questions.map(q => ({
+      // Create sequential timestamps to maintain import order
+      const baseTime = Date.now();
+      const values = questions.map((q, index) => ({
         id: crypto.randomUUID(),
         text: q.text,
         options: q.options,
         correct_answer: q.correctAnswer,
         subject: q.subject,
         set: q.set,
+        imported_at: new Date(baseTime + index), // Sequential timestamps
       }));
 
       const inserted = await db.insert(mockboardQuestions).values(values).returning();
