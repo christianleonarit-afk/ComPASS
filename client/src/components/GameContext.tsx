@@ -219,19 +219,20 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       setLives(INITIAL_LIVES);
       setTimeLeft(300 * 60); // 5 hours (300 minutes) for 650 questions
 
-      // Use custom questions if provided (for rooms), otherwise use mockboard questions from database or fall back to api questions
-      let mockQuestions: Question[];
+      // Use custom questions if provided (for rooms), otherwise use ALL mockboard questions in order
       if (customQuestions && customQuestions.length > 0) {
-        mockQuestions = customQuestions;
+        // For rooms: use the specific questions assigned to the room
+        setCurrentQuestions(customQuestions);
       } else if (mockboardQuestions.length > 0) {
-        mockQuestions = mockboardQuestions;
+        // For general mockboard: use ALL imported questions in their original order
+        // Limit to 650 questions max to prevent extremely long exams
+        const questionsToUse = mockboardQuestions.slice(0, MOCKBOARD_MAX_QUESTIONS);
+        setCurrentQuestions(questionsToUse);
       } else {
-        mockQuestions = apiQuestions;
+        // Fallback: use API questions with LIS distribution
+        const selectedQuestions = selectMockboardQuestions(apiQuestions);
+        setCurrentQuestions(selectedQuestions);
       }
-
-      // For mockboard, select up to 650 questions with proper LIS subject distribution
-      const selectedQuestions = selectMockboardQuestions(mockQuestions);
-      setCurrentQuestions(selectedQuestions);
     }
 
     setGameActive(true);
