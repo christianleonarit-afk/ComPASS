@@ -44,6 +44,24 @@ export default function Admin() {
     if (!managingRoom) return;
 
     try {
+      // First delete the questions associated with this room
+      if (managingRoom.questionIds && managingRoom.questionIds.length > 0) {
+        console.log('Deleting questions for room:', managingRoom.questionIds);
+        for (const questionId of managingRoom.questionIds) {
+          try {
+            const deleteResponse = await fetch(`/api/mockboard-questions/${questionId}`, {
+              method: 'DELETE',
+            });
+            if (!deleteResponse.ok) {
+              console.warn(`Failed to delete question ${questionId}`);
+            }
+          } catch (error) {
+            console.warn(`Error deleting question ${questionId}:`, error);
+          }
+        }
+      }
+
+      // Then delete the room
       const response = await fetch(`/api/rooms/${managingRoom.id}`, {
         method: 'DELETE',
       });
@@ -54,7 +72,7 @@ export default function Admin() {
         setManagingRoom(null);
         toast({
           title: "Room Deleted",
-          description: `Room "${managingRoom.name}" and its questions have been removed.`,
+          description: `Room "${managingRoom.name}" and its ${managingRoom.questionIds?.length || 0} questions have been removed.`,
         });
       } else {
         throw new Error('Failed to delete room');
@@ -64,6 +82,34 @@ export default function Admin() {
         variant: "destructive",
         title: "Delete Failed",
         description: "Could not delete the room. Please try again.",
+      });
+    }
+  };
+
+  const handleDeleteAllQuestions = async () => {
+    if (!confirm('Are you sure you want to delete ALL questions from the database? This action cannot be undone.')) {
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/mockboard-questions', {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        toast({
+          title: "All Questions Deleted",
+          description: `Successfully deleted ${result.deletedCount || 0} questions from the database.`,
+        });
+      } else {
+        throw new Error('Failed to delete questions');
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Delete Failed",
+        description: "Could not delete all questions. Please try again.",
       });
     }
   };
@@ -475,6 +521,16 @@ export default function Admin() {
                <div className="pt-4 border-t flex justify-between font-bold">
                  <span>Total Questions</span>
                  <span>90+</span>
+               </div>
+               <div className="pt-4 flex gap-2">
+                 <Button
+                   variant="destructive"
+                   size="sm"
+                   onClick={handleDeleteAllQuestions}
+                   className="flex-1"
+                 >
+                   Delete All Questions
+                 </Button>
                </div>
             </div>
           </CardContent>

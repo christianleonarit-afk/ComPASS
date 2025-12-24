@@ -261,6 +261,22 @@ export async function registerRoutes(
     }
   });
 
+  router.delete("/mockboard-questions/:id", async (req, res, next) => {
+    try {
+      const { db } = await import("./db");
+      const { mockboardQuestions } = await import("../shared/schema");
+      const { eq } = await import("drizzle-orm");
+
+      const result = await db.delete(mockboardQuestions).where(eq(mockboardQuestions.id, req.params.id));
+      if (result.rowsAffected === 0) {
+        return res.status(404).json({ message: "Question not found" });
+      }
+      res.json({ message: "Question deleted successfully" });
+    } catch (e) {
+      next(e);
+    }
+  });
+
   router.delete("/mockboard-questions", async (req, res, next) => {
     try {
       const { db } = await import("./db");
